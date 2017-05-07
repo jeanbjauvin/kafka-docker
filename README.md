@@ -234,5 +234,5 @@ You can check the [CHANGELOG](https://github.com/jeanbjauvin/kafka-docker/blob/m
 [Docker]: http://www.docker.io
 [Kafka]: http://kafka.apache.org
 [on Docker Hub]: https://hub.docker.com/r/jeanbjauvin/kafka/
-[relateiq/kafka]: https://github.com/relateiq/docker-kafka
 [the Kafka Quick Start]: http://kafka.apache.org/documentation.html#quickstart
+[Kafka License]: https://github.com/apache/kafka/blob/0.10.2.1/LICENSE
