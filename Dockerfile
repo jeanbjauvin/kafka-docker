@@ -23,7 +23,9 @@
 
 FROM openjdk:8-alpine
 
-LABEL maintainer "Jean Bruno JAUVIN <jeanbjauvin@gmail.com>"
+LABEL maintainer="Jean Bruno JAUVIN <jeanbjauvin@gmail.com>" \
+  name="Kafka" \
+  version="0.10.2.1"
 
 ENV KAFKA_VERSION=0.10.2.1 \
   KAFKA_SCALA_VERSION=2.12 \
