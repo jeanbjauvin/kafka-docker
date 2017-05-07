@@ -217,8 +217,12 @@ My original motivations for forking were:
 You can check the [CHANGELOG](https://github.com/jeanbjauvin/kafka-docker/blob/master/CHANGELOG.md)
 
 
-[Docker]: http://www.docker.io
-[Kafka]: http://kafka.apache.org
-[on Docker Hub]: https://hub.docker.com/r/jeanbjauvin/kafka/
-[the Kafka Quick Start]: http://kafka.apache.org/documentation.html#quickstart
-[Kafka License]: https://github.com/apache/kafka/blob/0.10.2.1/LICENSE
+[Docker](http://www.docker.io)
+
+[Kafka](http://kafka.apache.org)
+
+[on Docker Hub](https://hub.docker.com/r/jeanbjauvin/kafka/)
+
+[the Kafka Quick Start](http://kafka.apache.org/documentation.html#quickstart)
+
+[Kafka License](https://github.com/apache/kafka/blob/0.10.2.1/LICENSE)
