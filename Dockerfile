@@ -22,7 +22,8 @@
 # This image is therefore mostly for open-source projects.
 
 FROM openjdk:8-alpine
-MAINTAINER Jean Bruno JAUVIN <jeanbjauvin@gmail.com>
+
+LABEL maintainer "Jean Bruno JAUVIN <jeanbjauvin@gmail.com>"
 
 ENV KAFKA_VERSION=0.10.2.1 \
   KAFKA_SCALA_VERSION=2.12 \

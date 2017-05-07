@@ -41,9 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Usage Quick Start
 -----------------
 
-Here is a minimal-configuration example running the Kafka broker service, then
-using the container as a client to run the basic producer and consumer example
-from [the Kafka Quick Start]:
+Here is a minimal-configuration example running the Kafka broker service:
 
 ```
 $ docker run -d --name zookeeper jplock/zookeeper:3.4.6
@@ -51,18 +49,6 @@ $ docker run -d --name kafka --link zookeeper:zookeeper jeanbjauvin/kafka
 
 $ ZK_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' zookeeper)
 $ KAFKA_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' kafka)
-
-$ docker run --rm jeanbjauvin/kafka \
->   kafka-topics.sh --create --topic test --replication-factor 1 --partitions 1 --zookeeper $ZK_IP:2181
-Created topic "test".
-
-# In separate terminals:
-$ docker run --rm --interactive jeanbjauvin/kafka \
->   kafka-console-producer.sh --topic test --broker-list $KAFKA_IP:9092
-<type some messages followed by newline>
-
-$ docker run --rm jeanbjauvin/kafka \
->   kafka-console-consumer.sh --topic test --from-beginning --zookeeper $ZK_IP:2181
 ```
 
 ### Volumes
