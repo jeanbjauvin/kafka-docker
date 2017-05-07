@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/bash -x
 
 # If a Zookeeper container is linked with the alias `zookeeper`, use it.
 # Otherwise, ZOOKEEPER_IP must be set in env.

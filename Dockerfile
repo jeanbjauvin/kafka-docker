@@ -15,23 +15,21 @@ ENV KAFKA_VERSION=0.10.2.1 \
   JMX_PORT=7203
 
 RUN mkdir /kafka /data /logs \
-  && apk add --no-cache --virtual wget bash \
-  && wget -q -O - http://www.us.apache.org/dist/${KAFKA_VERSION}/kafka_${KAFKA_SCALA_VERSION}-${KAFKA_VERSION}.tgz | tar -xzf - -C /tmp \
-  && mv /tmp/kafka_* ${KAFKA_HOME} \
-  && rm /tmp/kafka_* \
+  && apk add --no-cache wget bash \
+  && wget -q -O - http://www.us.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${KAFKA_SCALA_VERSION}-${KAFKA_VERSION}.tgz | tar -xzf - -C /tmp \
+  && mv /tmp/kafka_*/* ${KAFKA_HOME} \
+  && rm -rf /tmp/kafka_* \
   && addgroup -S kafka \
   && adduser -h /kafka -G kafka -S -H -s /sbin/nologin kafka \
   && chown -R kafka:kafka /kafka /data /logs
 
-ADD config /kafka/config
-ADD start.sh /start.sh
+COPY config /kafka/config
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
 USER kafka
-
-ENV PATH /kafka/bin:$PATH
-WORKDIR /kafka
 
 EXPOSE 9092 ${JMX_PORT}
 VOLUME [ "/data", "/logs" ]
 
-CMD [ "/start.sh" ]
+ENTRYPOINT [ "/start.sh" ]
