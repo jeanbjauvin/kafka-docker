@@ -91,7 +91,7 @@ $ docker run -d \
     --name kafka \
     --volume ./data:/data --volume ./logs:/logs \
     --publish 9092:9092 --publish 7203:7203 \
-    --env KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env ZOOKEEPER_IP=127.0.0.1 \
+    --env KAFKA_ADVERTISED_LISTENERS=127.0.0.1 --env ZOOKEEPER_IP=127.0.0.1 \
     jeanbjauvin/kafka
 ```
 
@@ -106,14 +106,10 @@ with their default values, if any:
 
   Maps to Kafka's `broker.id` setting. Must be a unique integer for each broker
   in a cluster.
-- `KAFKA_PORT=9092`
 
-  Maps to Kafka's `port` setting. The port that the broker service listens on.
-  You will need to explicitly publish a new port from container instances if you
-  change this.
-- `KAFKA_ADVERTISED_HOST_NAME=<container's IP within docker0's subnet>`
+- `KAFKA_ADVERTISED_LISTENERS=<container's IP within docker0's subnet>`
 
-  Maps to Kafka's `advertised.host.name` setting. Kafka brokers gossip the list
+  Maps to Kafka's `advertised.listeners` address part setting. Kafka brokers gossip the list
   of brokers in the cluster to relieve producers from depending on a ZooKeeper
   library. This setting should reflect the address at which producers can reach
   the broker on the network, i.e. if you build a cluster consisting of multiple
@@ -121,10 +117,7 @@ with their default values, if any:
   *host's* interface where you forward the container `KAFKA_PORT`.
 - `KAFKA_ADVERTISED_PORT=9092`
 
-  As above, for the port part of the advertised address. Maps to Kafka's
-  `advertised.port` setting. If you run multiple broker containers on a single
-  Docker host and need them to be accessible externally, this should be set to
-  the port that you forward to on the Docker host.
+  As above, for the port part of the advertised listeners address. 
 - `KAFKA_DEFAULT_REPLICATION_FACTOR=1`
 
   Maps to Kafka's `default.replication.factor` setting. The default replication
