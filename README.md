@@ -218,4 +218,4 @@ You can check the [CHANGELOG](https://github.com/jeanbjauvin/kafka-docker/blob/m
 
 [the Kafka Quick Start](http://kafka.apache.org/documentation.html#quickstart)
 
-[Kafka License](https://github.com/apache/kafka/blob/0.10.2.1/LICENSE)
+[Kafka License](https://github.com/apache/kafka/blob/0.11.0.1/LICENSE)
