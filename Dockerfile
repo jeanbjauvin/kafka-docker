@@ -25,9 +25,9 @@ FROM openjdk:8-alpine
 
 LABEL maintainer="Jean Bruno JAUVIN <jeanbjauvin@gmail.com>" \
   name="Kafka" \
-  version="0.11.0.2"
+  version="0.11.0.3"
 
-ENV KAFKA_VERSION=0.11.0.2 \
+ENV KAFKA_VERSION=0.11.0.3 \
   KAFKA_SCALA_VERSION=2.12 \
   KAFKA_HOME=/kafka \
   JMX_PORT=7203
